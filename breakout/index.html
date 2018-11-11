@@ -57,7 +57,7 @@
         function drawLives() {
             ctx.font = "16px Arial";
             ctx.fillStyle = "#0095DD";
-            ctx.fillText("Lives: " + lives, canvas.width-65, 20);
+            ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
         }
         function drawScore() {
             ctx.font = "16px Arial";
@@ -122,11 +122,11 @@
                         document.location.reload();
                     }
                     else {
-                        x = canvas.width/2;
-                        y = canvas.height-30;
+                        x = canvas.width / 2;
+                        y = canvas.height - 30;
                         dx = 3;
                         dy = -3;
-                        paddleX = (canvas.width-paddleWidth)/2;
+                        paddleX = (canvas.width - paddleWidth) / 2;
                     }
                 }
             }
@@ -146,8 +146,8 @@
 
         function mouseMoveHandler(e) {
             let relativeX = e.clientX - canvas.offsetLeft;
-            if(relativeX > 0 && relativeX < canvas.width) {
-                paddleX = relativeX - paddleWidth/2;
+            if (relativeX > 0 && relativeX < canvas.width) {
+                paddleX = relativeX - paddleWidth / 2;
             }
         }
         function keyDownHandler(e) {
@@ -176,7 +176,7 @@
                             dy = -dy;
                             b.status = 0;
                             score++;
-                            if (score == brickRowCount*brickColumnCount) {
+                            if (score == brickRowCount * brickColumnCount) {
                                 alert("YOU WIN, CONGRATULATIONS!");
                                 document.location.reload();
                             }
@@ -185,7 +185,14 @@
                 }
             }
         }
-        draw();
+        function draw2() {
+            ctx.beginPath();
+            ctx.arc(50, 50, 10, 0, Math.PI * 2);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+        draw2();
     </script>
 </body>
 
